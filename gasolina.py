@@ -1,21 +1,21 @@
-# código de geração do gráfico 
-
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-df= pd.read_csv('gasolina.csv')
+# Carrega os dados do arquivo CSV em um DataFrame do Pandas
+df = pd.read_csv("gasolina.csv")
 
-# define o estilo do Seaborn
+# estilo do gráfico
+
 sns.set_style('darkgrid')
 
-# cria o gráfico de linha
-sns.lineplot(data=df, x='dia', y='venda')
+# Cria um gráfico de linha utilizando o método lineplot do Seaborn
+sns.lineplot(x="dia", y="venda", data=df)
 
-# rotulos aos eixos x e y
+# Adiciona um título e rótulos aos eixos x e y
+plt.title("Preço da gasolina ao longo dos dias")
+plt.xlabel("Dia")
+plt.ylabel("Preço (R$)")
 
-plt.xlabel('Dia')
-plt.ylabel('Preço de venda')
-
-# salva o gráfico em um arquivo PNG
-plt.savefig('gasolina.png')
+# Salva o gráfico em um arquivo png
+plt.savefig("gasolina1.png")
